@@ -1,16 +1,16 @@
-import "dotenv/config";
-import { buildApp } from "./app";
+import "dotenv/config"
+import { buildApp } from "./app"
 
-const app = buildApp();
+const app = buildApp()
 
-const port = Number(process.env.PORT ?? 3333);
+const port = Number(process.env.PORT ?? 3333)
 
 app
-  .listen({ port, host: "0.0.0.0" })
+  .listen({ port, host: "127.0.0.1" })
   .then(() => {
-    app.log.info(`Server rodando na porta ${port}`);
+    app.log.info(`Server rodando na porta ${port}`)
   })
   .catch((err) => {
-    app.log.error(err);
-    process.exit(1);
-  });
+    app.log.error(err)
+    process.exit(1)
+  })
